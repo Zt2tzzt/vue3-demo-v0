@@ -1,0 +1,43 @@
+<!--
+ * @Description: file content
+ * @Author: ZeT1an
+ * @Date: 2022-02-02 00:24:33
+ * @LastEditors: ZeT1an
+ * @LastEditTime: 2022-02-02 00:27:48
+ * @LastEditContent: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<div class="counter"></div>
+	<button class="increment">+1</button>
+	<button class="decrement">-1</button>
+
+	<script>
+		const counterEL = document.querySelector('.counter')
+		const incrementEL = document.querySelector('.increment')
+		const decrementEL = document.querySelector('.decrement')
+
+		let counter = 100
+		counterEL.innerHTML = counter
+
+		incrementEL.addEventListener('click', () => {
+			counter++
+			counterEL.innerHTML = counter
+		})
+		decrementEL.addEventListener('click', () => {
+			counter--
+			counterEL.innerHTML = counter
+		})
+	</script>
+</body>
+
+</html>

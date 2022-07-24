@@ -1,0 +1,47 @@
+<!--
+ * @Description: file content
+ * @Author: Zt2tzzt
+ * @Date: 2021-09-17 10:15:40
+ * @LastEditors: Zt2tzzt
+ * @LastEditTime: 2021-09-17 10:41:51
+ * @LastEditContent: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+
+  <template id="my-app">
+    <div :class="['abc', title]">呵呵呵呵</div>
+    <!-- 在数组语法中，使用三元运算符 -->
+    <div :class="['abc', title, isActive ? 'active' : '']">呵呵呵呵</div>
+    <!-- 在数组语法中，嵌套对象语法 -->
+    <div :class="['abc', title, {active: isActive}]"></div>
+  </template>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+    const app = {
+      template: '#my-app',
+      data() {
+        return {
+          title: 'cba',
+          isActive: true
+        }
+      },
+      methods:{
+        
+      }
+    }
+    Vue.createApp(app).mount('#app')
+  </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!--
+ * @Description: file content
+ * @Author: Zt2tzzt
+ * @Date: 2021-09-17 10:24:34
+ * @LastEditors: Zt2tzzt
+ * @LastEditTime: 2021-09-17 10:54:44
+ * @LastEditContent: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .active {
+      background-color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+
+  <template id="my-app">
+    <!-- 使用v-bind绑定style时，CSS属性名可以写成驼峰式，或者短横线分隔（需要用引号括起来） -->
+    <div :style="{color: finalColor, 'font-size': '30px'}">哈哈哈</div>
+    <div :style="{color: finalColor, fontSize: '30px'}">哈哈哈</div>
+    <div :style="{color: finalColor, fontSize: finalFontSize + 'px'}">哈哈哈</div>
+
+    <!-- 绑定一个data中的属性值，并且是一个对象 -->
+    <div :style="FinalStyleObj">呵呵呵</div>
+
+    <!-- 调用一个方法 -->
+    <div :style="getFinalStyleObj()">嘿嘿嘿</div>
+  </template>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+    const app = {
+      template: '#my-app',
+      data() {
+        return {
+          finalColor: 'red',
+          finalFontSize: 50,
+          FinalStyleObj: {
+            'font-size': '50px',
+            fontWeight: 700,
+            backgroundColor: 'yellow'
+          }
+        }
+      },
+      methods:{
+        getFinalStyleObj() {
+          return {
+            'font-size': '50px',
+            fontWeight: 700,
+            backgroundColor: 'red'
+          }
+        }
+      }
+    }
+    Vue.createApp(app).mount('#app')
+  </script>
+</body>
+</html>

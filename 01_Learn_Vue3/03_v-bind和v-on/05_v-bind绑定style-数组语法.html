@@ -1,0 +1,49 @@
+<!--
+ * @Description: file content
+ * @Author: Zt2tzzt
+ * @Date: 2021-09-17 10:58:30
+ * @LastEditors: Zt2tzzt
+ * @LastEditTime: 2021-09-17 11:01:45
+ * @LastEditContent: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <template id="my-app">
+    <div :style="[style1Obj, style2Obj]">哈哈哈</div>
+  </template>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+    const app = {
+      template: '#my-app',
+      data() {
+        return {
+          style1Obj: {
+            color: 'red',
+            fontSize: '30px'
+          },
+          style2Obj: {
+            textDecoration: "underline"
+          }
+        }
+      },
+      methods: {
+
+      }
+    }
+    Vue.createApp(app).mount('#app')
+  </script>
+</body>
+
+</html>

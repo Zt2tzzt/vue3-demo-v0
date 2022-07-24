@@ -1,0 +1,87 @@
+<!--
+ * @Description: file content
+ * @Author: Zt2tzzt
+ * @Date: 2021-09-18 11:15:22
+ * @LastEditors: Zt2tzzt
+ * @LastEditTime: 2021-09-18 11:32:35
+ * @LastEditContent: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <template id="my-app">
+    <h2>{{ info.name }}</h2>
+    <button @click="changeInfo">改变info</button>
+    <button @click="changeInfoName">改变info.name</button>
+    <button @click="changeInfoPremierName">改变info.preimer.name</button>
+    <button @click="changeFriendName">改变friends[0].naame</button>
+  </template>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+    const app = {
+      template: '#my-app',
+      data() {
+        return {
+          info: { name: 'zzt', age: 18, premier: { name: 'Ronaldo' } },
+          friends: [
+            { name: 'Messi' },
+            { name: 'Lingard' }
+          ]
+        }
+      },
+      watch: {
+        info(val, oldval) {
+          console.log(val, oldval)
+        },
+        'info.name': function (val, oldval) {
+          console.log(val, oldval)
+        },
+        'info.premier.name': function (val, oldval) {
+          console.log(val, oldval)
+        },
+        // 无效写法
+        'friends[0].name': function (val, oldval) {
+          console.log(val, oldval)
+        },
+        friends: {
+          handler(val, oldval) {
+            console.log('friends change')
+          },
+          deep: true,
+          // immediate: true
+        }
+      },
+      computed: {
+
+      },
+      methods: {
+        changeInfo() {
+          this.info = { name: 'Lingard' }
+        },
+        changeInfoName() {
+          this.info.name = 'Salah'
+        },
+        changeInfoPremierName() {
+          this.info.premier.name = 'DeBruyne'
+        },
+        changeFriendName() {
+          this.friends[0].name = 'Chiesa'
+        }
+      }
+    }
+    Vue.createApp(app).mount('#app')
+  </script>
+</body>
+
+</html>

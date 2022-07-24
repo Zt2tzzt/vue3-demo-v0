@@ -1,0 +1,59 @@
+<!--
+ * @Description: file content
+ * @Author: Zt2tzzt
+ * @Date: 2021-09-18 09:27:43
+ * @LastEditors: Zt2tzzt
+ * @LastEditTime: 2021-09-18 09:30:49
+ * @LastEditContent: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <template id="my-app">
+    <h2>{{ getFullName() }}</h2>
+    <h2>{{ getResult() }}</h2>
+    <h2>{{ getReverseMessage() }}</h2>
+  </template>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+    const app = {
+      template: '#my-app',
+      data() {
+        return {
+          firstname: 'Lionel',
+          lastname: 'messi',
+          score: 80,
+          message: 'Hello World'
+        }
+      },
+      watch: {
+        
+      },
+      computed: {
+        
+      },
+      methods: {
+        getFullName() {
+          return this.firstname + ' ' + this.lastname
+        },
+        getResult() {
+          return this.score >= 60 ? '及格' : '不及格'
+        },
+        getReverseMessage() {
+          return this.message.split(' ').reverse().join(' ')
+        }
+      }
+    }
+    Vue.createApp(app).mount('#app')
+  </script>
+</body>
+</html>

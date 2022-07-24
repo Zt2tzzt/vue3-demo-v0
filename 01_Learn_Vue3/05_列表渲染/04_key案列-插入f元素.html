@@ -1,0 +1,48 @@
+<!--
+ * @Description: file content
+ * @Author: Zt2tzzt
+ * @Date: 2021-09-17 13:39:47
+ * @LastEditors: Zt2tzzt
+ * @LastEditTime: 2021-09-17 14:01:16
+ * @LastEditContent: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <template id="my-app">
+    <ul>
+      <li v-for="item in letters" :key="item">{{ item }}</li>
+    </ul>
+    <button @click="insert">插入f</button>
+  </template>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+    const app = {
+      template: '#my-app',
+      data() {
+        return {
+          letters: ['a', 'b', 'c', 'd']
+        }
+      },
+      methods: {
+        insert() {
+          this.letters.splice(2, 0, 'f')
+        }
+      }
+    }
+    Vue.createApp(app).mount('#app')
+  </script>
+</body>
+
+</html>

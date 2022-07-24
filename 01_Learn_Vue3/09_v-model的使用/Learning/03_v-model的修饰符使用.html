@@ -1,0 +1,70 @@
+<!--
+ * @Description: file content
+ * @Author: Zt2tzzt
+ * @Date: 2021-09-30 14:16:27
+ * @LastEditors: ZeT1an
+ * @LastEditTime: 2022-02-05 19:56:30
+ * @LastEditContent: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <template id="my-app">
+    <!-- 1.lazy修饰符 -->
+    <div>
+      <input type="text" v-model.lazy="message">
+    </div>
+
+    <!-- 2.number修饰符 -->
+    <div>
+      <input type="number" v-model.number="message">
+      <h2>message: {{message}}</h2>
+      <button @click="showType">查看类型</button>
+    </div>
+
+    <!-- 3.trim修饰符 -->
+    <div>
+      <input type="text" v-model.trim="message">
+      <button @click="showResult">查看结果</button>
+    </div>
+  </template>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+    const app = {
+      template: '#my-app',
+      data() {
+        return {
+          message: 'Hellow Froge'
+        }
+      },
+      watch: {
+
+      },
+      computed: {
+
+      },
+      methods: {
+        showType() {
+          console.log(this.message, typeof this.message)
+        },
+        showResult() {
+          console.log(this.message)
+        }
+      }
+    }
+    Vue.createApp(app).mount('#app')
+  </script>
+</body>
+
+</html>

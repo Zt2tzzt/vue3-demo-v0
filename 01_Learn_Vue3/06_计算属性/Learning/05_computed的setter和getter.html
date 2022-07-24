@@ -1,0 +1,66 @@
+<!--
+ * @Description: file content
+ * @Author: Zt2tzzt
+ * @Date: 2021-09-18 09:45:19
+ * @LastEditors: Zt2tzzt
+ * @LastEditTime: 2021-09-18 09:53:27
+ * @LastEditContent: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <template id="my-app">
+    <button @click="changeFullname">修改fullname</button>
+    <h2>{{ fullname }}</h2>
+  </template>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+    const app = {
+      template: '#my-app',
+      data() {
+        return {
+          firstname: 'Lionel',
+          lastname: 'Messi'
+        }
+      },
+      watch: {
+        
+      },
+      computed: {
+        // firstname 的 getter 方法
+        fullname() {
+          return this.firstname + ' ' + this.lastname
+        },
+        
+        // fullname 的 getter 和 setter 方法
+        fullname: {
+          get() {
+            return this.firstname + ' ' + this.lastname
+          },
+          set(newVal) {
+            console.log(newVal)
+            const nameArr = newVal.split(' ')
+            this.firstname = nameArr[0]
+            this.lastname = nameArr[1]
+          }
+        }
+      },
+      methods: {
+        changeFullname() {
+          this.fullname = 'Coder zzt'
+        }
+      }
+    }
+    Vue.createApp(app).mount('#app')
+  </script>
+</body>
+</html>

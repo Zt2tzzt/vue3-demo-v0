@@ -1,0 +1,97 @@
+<!--
+ * @Description: file content
+ * @Author: Zt2tzzt
+ * @Date: 2021-09-18 10:04:14
+ * @LastEditors: ZeT1an
+ * @LastEditTime: 2022-02-06 00:05:03
+ * @LastEditContent: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <template id="my-app">
+    <h2>{{ info.name }}</h2>
+    <!-- <h2>{{ info.premier.name }}</h2> -->
+    <button @click="changeInfo">改变Info</button>
+    <button @click="changeInfoName">改变Info.name</button>
+    <button @click="changeInfoPremierName">改变Info.premier.name</button>
+  </template>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+    const app = {
+      template: '#my-app',
+      data() {
+        return {
+          info: { name: 'zzt', age: '18', premier: { name: 'Ronaldo' } }
+        }
+      },
+      watch: {
+        // 默认情况下，侦听器只侦听数据本身的改变，内部发生的改变是不会侦听的。
+        info(val, oldVal) {
+          console.log('val', val, 'oldVal', oldVal)
+        },
+
+        // 深度监听 & 立即执行（一定会执行一次）
+        info: {
+          handler(val, oldVal) {
+            console.log('val', val, 'oldVal', oldVal)
+            // console.log('哈哈哈')
+          },
+          deep: true,
+          immediate: true // 立即执行
+        },
+
+        // 侦听单个嵌套
+        'info.name': function (val, oldVal) {
+          console.log('val.name', val, 'oldVal.name', oldVal)
+        },
+        'info.premier.name': function (val, oldVal) {
+          console.log('val.premier.name', val, 'oldVal.premier.name', oldVal)
+        },
+
+        info: [
+          'handle1',
+          function handle2(val, oldVal) {
+            console.log('handle2 triggered');
+          },
+          {
+            handler(val, oldVal) {
+              console.log('handle3 triggered');
+            }
+          }
+        ]
+      },
+      computed: {
+
+      },
+      methods: {
+        changeInfo() {
+          this.info = { name: 'Lingard' }
+        },
+        changeInfoName() {
+          this.info.name = 'Lingard'
+        },
+        changeInfoPremierName() {
+          this.info.premier.name = 'Lingard'
+        },
+        handle1(val, oldVal) {
+          console.log('handle1 triggered');
+        }
+      }
+    }
+    Vue.createApp(app).mount('#app')
+  </script>
+</body>
+
+</html>

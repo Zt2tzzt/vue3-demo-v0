@@ -1,0 +1,49 @@
+<!--
+ * @Description: file content
+ * @Author: Zt2tzzt
+ * @Date: 2021-09-17 11:29:36
+ * @LastEditors: Zt2tzzt
+ * @LastEditTime: 2021-09-17 11:33:56
+ * @LastEditContent: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <template id="my-app">
+    <!-- 默认传入event对象,可以在方法中获取 -->
+    <button @click="btn1Click">按钮1</button>
+
+    <!-- $event可以获取到事件发生时的事件对象 -->
+    <button @click="btn2Click($event, 'zzt', '18')">按钮2</button>
+  </template>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+    const app = {
+      template: '#my-app',
+      data() {
+        return {
+
+        }
+      },
+      methods:{
+        btn1Click () {
+          console.log(event);
+        },
+        btn2Click (event, name, age) {
+          console.log(name, age, event)
+        }
+      }
+    }
+    Vue.createApp(app).mount('#app')
+  </script>
+</body>
+</html>

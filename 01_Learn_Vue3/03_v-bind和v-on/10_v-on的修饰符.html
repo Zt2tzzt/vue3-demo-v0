@@ -1,0 +1,53 @@
+<!--
+ * @Description: file content
+ * @Author: Zt2tzzt
+ * @Date: 2021-09-17 11:35:13
+ * @LastEditors: ZeT1an
+ * @LastEditTime: 2022-02-17 10:51:27
+ * @LastEditContent: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <template id="my-app">
+    <div @click="divClick">
+      <button @click.stop="btnClick">按钮</button>
+    </div>
+    <!-- 输入时enter键抬起触发事件 -->
+    <input type="text" @keyup.enter="enterKeyup">
+  </template>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+    const app = {
+      template: '#my-app',
+      data() {
+        return {}
+      },
+      methods: {
+        divClick() {
+          console.log('divClick')
+        },
+        btnClick() {
+          console.log('btnClick')
+        },
+        enterKeyup() {
+          console.log('keyup', event.target.value)
+        }
+      }
+    }
+    Vue.createApp(app).mount('#app')
+  </script>
+</body>
+
+</html>
