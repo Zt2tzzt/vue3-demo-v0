@@ -1,7 +1,7 @@
 # VUE3-DEMO-V0
 
 #### 介绍
-VUE3的学习笔记和DEMO
+ZeTian的VUE3的学习资料分享-V0
 
 #### 参与贡献
 
