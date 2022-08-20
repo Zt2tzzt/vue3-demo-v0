@@ -24,7 +24,7 @@ url-loader 可以取代 file-loader。
 
 ------
 
-用于文件名配置的 placeHolders，6个
+用于文件名配置的占位符 placeHolders，6个
 
 - [ext]：处理文件的扩展名。
 - [name]：处理文件的名称。
@@ -73,7 +73,7 @@ url-loader 配置某个数值大小的图片转成 base64：
     loader: 'url-loader',
     options: {
       name: 'img/[name]_[hash:8].[ext]',
-      limit: 10 * 1024, // 大于10kb的图片不会做base64转换。
+      limit: 10 * 1024, // 大于10kb的图片不会做 base64 转换。
     }
   }
 }
@@ -90,7 +90,7 @@ webpack5 中内置的资源模块类型（asset module type）4个，作用
 
 ------
 
-使用 asset module type配置文件名和路径，2种，实现limit效果。
+使用 asset module type 配置文件名和路径，2种，实现limit效果。
 
 ```javascript
 module.exports = {
@@ -98,7 +98,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "./build"),
     filename: 'js/bundle.js',
-    assetModuleFilename: 'img/[name]_[hash:6][ext]' // [ext]前不用加.
+    assetModuleFilename: 'img/[name]_[hash:6][ext]' // [ext]前不用加"."
   },
   module: {
     rules: [
@@ -110,7 +110,7 @@ module.exports = {
         },*/ // 也可在 output -> assetModuleFilename 中配置。
         parser: {
           dataUrlCondition: {
-            maxSize: 10 * 1024 // 实现url-loader的limit效果。
+            maxSize: 10 * 1024 // 实现 url-loader 的 limit 效果。
           }
         }
       }

@@ -167,8 +167,8 @@ module.exports = {
     rules: [
       {
         test: /\.css$/, // 对资源进行匹配，通常是正则表达式
-        // loader: "css-loader", // 写法一
-        // use: ["css-loader"], // 写法二
+        // loader: "css-loader", // 简写写法一
+        // use: ["css-loader"], // 简写写法二
         use: [
         	{loader: "css-loader"},
         	{loader: "style-loader"},
@@ -181,7 +181,7 @@ module.exports = {
 
 多个 loader 的加载顺序：从下到上，从后到前，从右向左。
 
-使用上属方法，css打包后是内联样式。
+使用上述方法，css打包后是内部样式。如果要抽取到独立文件中，需要使用 plugin（后续讲解）
 
 ------
 
@@ -208,7 +208,7 @@ npx lessc ./src/css/title.less title.css
      use: [
        {loader: "css-loader"},
        {loader: "style-loader"},
-       {loader: "less-loader"},
+       {loader: "less-loader"}, // less 处理后会转成 css，所以上面还要加上 css 的 loader
      ]
    }
    ```
@@ -220,7 +220,7 @@ npx lessc ./src/css/title.less title.css
 
 1. PostCSS 是一个通过 JavaScript 来转换样式的工具。
 2. 它可自动进行一些CSS转换和适配，比如自动添加浏览器前缀，css样式的重置。
-3. 但是，实现这些功能，需要借助 PostCSS 插件。
+3. 但是，实现这些功能，需要借助 PostCSS 插件，如 autoprefixer。
 
 如何单独使用，
 
