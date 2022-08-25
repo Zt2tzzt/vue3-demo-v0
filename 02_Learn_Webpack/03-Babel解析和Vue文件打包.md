@@ -225,7 +225,7 @@ webpack 对 vue 的SFC文件打包的步骤：
 
    ```javascript
    import App from './vue/App.vue'
-   import { createApp } from 'vue.esm.bundle.js' // 后续安装 @vue/compiler-sfc，配置 vue-loader-plugin 后，可改为默认引入方式，即vue
+   import { createApp } from 'vue.esm.bundle.js' /* 后续安装 @vue/compiler-sfc，配置 vue-loader-plugin 后，可改为默认引入方式，即 vue */
    createApp(App).mount('#app')
    ```
 
