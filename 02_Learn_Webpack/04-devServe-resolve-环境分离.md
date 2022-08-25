@@ -271,7 +271,6 @@ webpack解析时如何确认是文件还是目录？
 - 当作是目录
 
   3. 根据`resolve.mainFiles`配置选项中指定的文件顺序查找，默认值是['index']
-
   4. 根据`resolve.extensions`来解析扩展名。
 
 ------
