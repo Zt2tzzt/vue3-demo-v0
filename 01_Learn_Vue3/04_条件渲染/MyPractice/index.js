@@ -3,7 +3,7 @@
  * @Author: ZeT1an
  * @Date: 2022-02-04 01:38:16
  * @LastEditors: ZeT1an
- * @LastEditTime: 2022-05-05 00:13:30
+ * @LastEditTime: 2022-08-30 21:00:04
  * @LastEditContent: 
  */
 /**
@@ -71,7 +71,7 @@
  */
 
 /**
- * 使用v-for通常会给元素绑定key属性。
+ * 使用 v-for 通常会给元素绑定 key 属性。
  */
 
 /**
