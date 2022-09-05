@@ -3,7 +3,7 @@
  * @Author: ZeT1an
  * @Date: 2022-02-05 19:20:36
  * @LastEditors: ZeT1an
- * @LastEditTime: 2022-03-07 14:58:55
+ * @LastEditTime: 2022-09-04 20:45:43
  * @LastEditContent: 
  */
 /**
@@ -15,7 +15,7 @@
  */
 
 /**
- * v-mode的1点理解：
+ * v-mode的1点理解： 
  * v-model本质上是语法糖，负责监听用户的输入事件来更新数据。并在某种极端场景下做一些特殊处理。
  */
 

@@ -2,7 +2,7 @@ CLI的3点理解：
 
 1. 脚手架是建筑工程的概念，软件工程中帮助我们搭建项目的工具称之为脚手架。
 2. CLI是command-line-interface，翻译为命令行界面。
-3. VueCLI已经内置了webpack的相关配置。
+3. Vue CLI已经内置了webpack的相关配置。
 
 ------
 
@@ -27,26 +27,32 @@ VueCLI可配置项理解
 
 ```shell
 Vue CLI v4.5.15
-? Please pick a preset: (Use arrow keys)  // 选择预设
-  Default ([Vue 2] babel, eslint) // 选择vue2的版本，默认选择babel和eslint
-  Default (Vue 3) ([Vue 3] babel, eslint) // // 选择vue3版本，默认选择babel和eslint
-> Manually select features // 手动选择希望获取到的特性
+? Please pick a preset: (Use arrow keys)  # 选择预设
+  Default ([Vue 2] babel, eslint) # 选择vue2的版本，默认选择babel和eslint
+  Default (Vue 3) ([Vue 3] babel, eslint) # 选择vue3版本，默认选择babel和eslint
+> Manually select features # 手动选择希望获取到的特性
 ```
 
 ```shell
 Vue CLI v4.5.15
 ? Please pick a preset: Manually select features
 ? Check the features needed for your project: (Press <space> to select, <a> to toggle all, <i> to invert selection)
->(*) Choose Vue version // 是否选择vue版本
- (*) Babel // 是否选择babel
- ( ) TypeScript // 是否使用ts
- ( ) Progressive Web App (PWA) Support // 是否支持PWA
- ( ) Router // 是否默认添加Router
- ( ) Vuex // 是否默认添加Vuex
- ( ) CSS Pre-processors // 是否选择CSS预处理器
- (*) Linter / Formatter // 是否选择ESLint对代码进行格式化限制。
- ( ) Unit Testing // 是否添加单元测试
- ( ) E2E Testing // 是否添加端到端测试。
+>(*) Choose Vue version # 是否选择vue版本
+ (*) Babel # 是否选择babel
+ ( ) TypeScript # 是否使用ts
+ ( ) Progressive Web App (PWA) Support # 是否支持PWA
+ ( ) Router # 是否默认添加Router
+ ( ) Vuex # 是否默认添加Vuex
+ ( ) CSS Pre-processors # 是否选择CSS预处理器
+ (*) Linter / Formatter # 是否选择ESLint对代码进行格式化限制。
+ ( ) Unit Testing # 是否添加单元测试
+ ( ) E2E Testing # 是否添加端到端测试。
+```
+
+```shell
+? Where do you prefer placing config for Babel, ESLint, etc.? (Use arrow keys) # 设置单独的配置文件，还是统一将配置放在 package.json
+> In dedicated config files 
+  In package.json 
 ```
 
 VueCLI创建的项目目录结构的理解：
