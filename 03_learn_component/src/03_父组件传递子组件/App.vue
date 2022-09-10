@@ -1,11 +1,3 @@
-<!--
- * @Description: file content
- * @Author: Zt2tzzt
- * @Date: 2021-10-11 14:14:23
- * @LastEditors: Zt2tzzt
- * @LastEditTime: 2021-10-11 15:20:06
- * @LastEditContent: 
--->
 <template>
   <div id="app">
     <show-message title="哈哈哈" content="我试哈哈哈" />

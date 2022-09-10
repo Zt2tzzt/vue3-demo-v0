@@ -1,11 +1,3 @@
-<!--
- * @Description: file content
- * @Author: Zt2tzzt
- * @Date: 2021-10-15 13:54:57
- * @LastEditors: Zt2tzzt
- * @LastEditTime: 2021-10-15 13:54:57
- * @LastEditContent: 
--->
 <template>
   <div>
     Category组件
