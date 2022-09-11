@@ -447,7 +447,7 @@ App.vue
     data() {
       return {
         message: 'Hello Frog',
-        title: 'the title
+        title: 'the title'
       }
     }
   }
