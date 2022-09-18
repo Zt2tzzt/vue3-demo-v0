@@ -51,9 +51,10 @@ const routes = [
 ]
 const router = createRouter({
 	routes,
-	history: createWebHashHistory()
+  // history: createWebHistory(), // 使用 history 模式
+	history: createWebHashHistory() // 使用 hash 模式
 })
-// router对象中，有install函数，其中执行了 app.component('router-link', ...), app.component('router-view',...)
+// router 对象中，有 install 函数，其中执行了 app.component('router-link', ...), app.component('router-view',...)
 export default router
 ```
 
@@ -109,8 +110,8 @@ const routes = [
 router-link 的4个属性
 
 - to：可传字符串如`/home`、对象如`{ path: '/home', query: { name: 'zzt', age: 18 } }`
-- replace：会调用router.replace()，而不是router.push()
-- active-class：路由激活后应用于<a>的class，默认是`router-link-active`
+- replace：会调用 router.replace()，而不是router.push()
+- active-class：路由激活后应用于 <a> 的 class，默认是`router-link-active`
 - exact-active-class：与嵌套路由有关，路由精准激活时，应用于<a>的class,，默认是`router-link-exact-active`
 - custom：表示自定义元素，否则内容外会包裹<a>
 
@@ -156,7 +157,10 @@ const routes = [
     path: '/about',
     name: 'about',
     component: () => import('../pages/About.vue'),
-    meta: { name: 'zzt', age: 18 }
+    meta: {
+      name: 'zzt',
+      age: 18
+    }
   }
 ]
 ```
