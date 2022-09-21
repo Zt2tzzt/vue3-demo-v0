@@ -504,6 +504,7 @@ export default {
 		...mapMutations('home', ['increment']),
 		...mapActions('home', ['homeIncrementAction'])
 	},
+}
 </script>
 ```
 
@@ -522,6 +523,7 @@ export default {
 		...mapMutations(['increment']),
 		...mapActions(['homeIncrementAction'])
 	},
+}
 </script>
 ```
 
